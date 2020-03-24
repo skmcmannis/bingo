@@ -23,7 +23,14 @@ class _SquareState extends State<Square> {
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
-        child: Text('Sample')
+        color: Theme.of(context).dialogBackgroundColor,
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.width / 6
+        ),
+        child:
+          Text('A big chunk of text'),
+        padding: const EdgeInsets.all(5),
+        margin: const EdgeInsets.all(5),
       )
     );
   }

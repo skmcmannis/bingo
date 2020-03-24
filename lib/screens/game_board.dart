@@ -23,70 +23,80 @@ class GameBoard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Text('B',
-                      style: Theme.of(context).textTheme.display1
-                    ),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                  ],
-                  mainAxisSize: MainAxisSize.min,
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('B',
+                        style: Theme.of(context).textTheme.display1
+                      ),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                    ],
+                    mainAxisSize: MainAxisSize.min,
+                  ),
                 ),
-                Column(
-                  children: <Widget>[
-                    Text('I',
-                      style: Theme.of(context).textTheme.display1
-                    ),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                  ],
-                  mainAxisSize: MainAxisSize.min,
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('I',
+                        style: Theme.of(context).textTheme.display1
+                      ),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                    ],
+                    mainAxisSize: MainAxisSize.min,
+                  ),
                 ),
-                Column(
-                  children: <Widget>[
-                    Text('N',
-                      style: Theme.of(context).textTheme.display1
-                    ),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                  ],
-                  mainAxisSize: MainAxisSize.min,
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('N',
+                        style: Theme.of(context).textTheme.display1
+                      ),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                    ],
+                    mainAxisSize: MainAxisSize.min,
+                  ),
                 ),
-                Column(
-                  children: <Widget>[
-                    Text('G',
-                      style: Theme.of(context).textTheme.display1
-                    ),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                  ],
-                  mainAxisSize: MainAxisSize.min,
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('G',
+                        style: Theme.of(context).textTheme.display1
+                      ),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                    ],
+                    mainAxisSize: MainAxisSize.min,
+                  ),
                 ),
-                Column(
-                  children: <Widget>[
-                    Text('O',
-                      style: Theme.of(context).textTheme.display1
-                    ),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                    Square(),
-                  ],
-                  mainAxisSize: MainAxisSize.min,
+                Expanded(
+                  child: Column(
+                    children: <Widget>[
+                      Text('O',
+                        style: Theme.of(context).textTheme.display1
+                      ),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                      Square(),
+                    ],
+                    mainAxisSize: MainAxisSize.min,
+                  ),
                 ),
               ]
             )
