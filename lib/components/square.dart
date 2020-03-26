@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class Square extends StatefulWidget {
-  Square({Key key, this.text}) : super(key: key);
+  const Square({Key key, this.text}) : super(key: key);
 
   final String text;
 
@@ -23,13 +24,22 @@ class _SquareState extends State<Square> {
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
+        alignment: Alignment.center,
         color: Theme.of(context).dialogBackgroundColor,
         constraints: BoxConstraints(
-          maxHeight: MediaQuery.of(context).size.width / 6
+          minHeight: MediaQuery.of(context).size.height / 10,
+          maxHeight: MediaQuery.of(context).size.height / 10,
+          minWidth: MediaQuery.of(context).size.width / 6,
+          maxWidth: MediaQuery.of(context).size.width / 6
         ),
-        child:
-          Text('A big chunk of text'),
-        padding: const EdgeInsets.all(5),
+        child: AutoSizeText(widget.text,
+          wrapWords: false,
+          textAlign: TextAlign.center,
+          maxLines: 5,
+          maxFontSize: 20,
+          minFontSize: 8,
+        ),
+        padding: const EdgeInsets.all(2),
         margin: const EdgeInsets.all(5),
       )
     );
