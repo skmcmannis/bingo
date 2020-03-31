@@ -8,7 +8,6 @@ class Bingo extends StatelessWidget {
     return MaterialApp(
       title: 'Neighborhood Bingo',
       theme: ThemeData(
-        dialogBackgroundColor: Colors.white,
         backgroundColor: Colors.red,
         primarySwatch: Colors.green,
       ),

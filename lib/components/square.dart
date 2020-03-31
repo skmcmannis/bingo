@@ -13,19 +13,30 @@ class Square extends StatefulWidget {
 class _SquareState extends State<Square> {
 
   int _background = 1;
+  Color _color = Colors.white;
+  Color _text = Colors.black;
 
   void _flipSquare() {
     setState(() {
       _background = _background * -1;
+      if(_background == 1) {
+        _color = Colors.white;
+        _text = Colors.black;
+      } else {
+        _color = Colors.black;
+        _text = Colors.white;
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
-      child: Container(
+      child: GestureDetector(
+        onTap: () {_flipSquare();},
+        child: Container(
         alignment: Alignment.center,
-        color: Theme.of(context).dialogBackgroundColor,
+        color: _color,
         constraints: BoxConstraints(
           minHeight: MediaQuery.of(context).size.height / 10,
           maxHeight: MediaQuery.of(context).size.height / 10,
@@ -33,6 +44,10 @@ class _SquareState extends State<Square> {
           maxWidth: MediaQuery.of(context).size.width / 6
         ),
         child: AutoSizeText(widget.text,
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: _text
+          ),
           wrapWords: false,
           textAlign: TextAlign.center,
           maxLines: 5,
@@ -41,6 +56,7 @@ class _SquareState extends State<Square> {
         ),
         padding: const EdgeInsets.all(2),
         margin: const EdgeInsets.all(5),
+        )
       )
     );
   }
