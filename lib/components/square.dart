@@ -1,20 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import '../models/database_manager.dart';
 
 class Square extends StatefulWidget {
-  const Square({Key key, this.text}) : super(key: key);
+  const Square({Key key, this.squareIndex, this.text}) : super(key: key);
 
   final String text;
+  final int squareIndex;
 
   @override
-  _SquareState createState() => _SquareState();
+  _SquareState createState() => _SquareState(squareIndex);
 }
 
 class _SquareState extends State<Square> {
 
+  int _squareIndex;
   int _background = 1;
   Color _color = Colors.white;
   Color _text = Colors.black;
+
+  _SquareState(int squareIndex) {
+    this._squareIndex = squareIndex;
+    insertSquareState();
+  }
+
+  void insertSquareState() async {
+    DatabaseManager db = DatabaseManager.getInstance();
+    await db.insertSquare(squareIndex: _squareIndex, state: _background);
+  }
+
+  void updateSquareState() async {
+    DatabaseManager db = DatabaseManager.getInstance();
+    await db.updateSquare(squareIndex: _squareIndex, state: _background);
+  }
 
   void _flipSquare() {
     setState(() {
@@ -27,6 +45,8 @@ class _SquareState extends State<Square> {
         _text = Colors.white;
       }
     });
+
+    updateSquareState();
   }
 
   @override

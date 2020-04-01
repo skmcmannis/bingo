@@ -1,0 +1,1 @@
+UPDATE square_state SET state=? WHERE square=?;

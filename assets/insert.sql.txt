@@ -1,0 +1,1 @@
+INSERT INTO square_state (square, state) VALUES (?, ?)
