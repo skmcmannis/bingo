@@ -1,1 +1,1 @@
-INSERT INTO square_state (square, state) VALUES (?, ?)
+INSERT OR IGNORE INTO square_state (square, state) VALUES (?, ?)

@@ -3,24 +3,33 @@ import 'package:auto_size_text/auto_size_text.dart';
 import '../models/database_manager.dart';
 
 class Square extends StatefulWidget {
-  const Square({Key key, this.squareIndex, this.text}) : super(key: key);
+  const Square({Key key, this.squareIndex, this.background, this.text}) : super(key: key);
 
   final String text;
   final int squareIndex;
+  final int background;
 
   @override
-  _SquareState createState() => _SquareState(squareIndex);
+  _SquareState createState() => _SquareState(squareIndex, background);
 }
 
 class _SquareState extends State<Square> {
 
   int _squareIndex;
-  int _background = 1;
+  int _background;
   Color _color = Colors.white;
   Color _text = Colors.black;
 
-  _SquareState(int squareIndex) {
+  _SquareState(int squareIndex, int background) {
     this._squareIndex = squareIndex;
+    this._background = background;
+    if(_background == 1) {
+      _color = Colors.white;
+      _text = Colors.black;
+    } else {
+      _color = Colors.black;
+      _text = Colors.white;
+    }
     insertSquareState();
   }
 

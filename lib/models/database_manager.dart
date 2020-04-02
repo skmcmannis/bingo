@@ -8,6 +8,7 @@ class DatabaseManager {
   static const String DATABASE_SCHEMA = 'assets/schema.sql.txt';
   static const String DATABASE_INSERT = 'assets/insert.sql.txt';
   static const String DATABASE_UPDATE = 'assets/update.sql.txt';
+  static const String DATABASE_SELECT = 'assets/select.sql.txt';
 
   static DatabaseManager _instance;
 
@@ -53,6 +54,10 @@ class DatabaseManager {
         squareIndex]
       );
     });
+  }
+
+  Future<List<Map>> getSquareStates() async {
+    return await db.rawQuery(await rootBundle.loadString(DATABASE_SELECT));
   }
 
 }
