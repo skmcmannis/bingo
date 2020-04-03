@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/drawer.dart';
 import '../components/square.dart';
 import '../components/text_styles.dart';
 import '../models/database_manager.dart';
@@ -62,6 +63,7 @@ class _GameBoardState extends State<GameBoard> {
                   child: Text(widget.title),
                 )
               ),
+              drawer: Options(),
               body: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
